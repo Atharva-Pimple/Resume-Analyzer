@@ -1,4 +1,5 @@
 const express =require("express");
+const cors=require('cors');
 const resumeRouter = require("./src/routes/resume-Route");
 const userRouter = require('./src/routes/user-Route');
 
@@ -10,10 +11,8 @@ const uri = process.env.DB_uri;
 
 
 
-
-
-
 const app = express();
+app.use(cors());
 app.use(express.json());
 
 const PORT = process.env.PORT || 3000;
